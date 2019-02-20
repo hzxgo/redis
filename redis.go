@@ -314,7 +314,7 @@ func Brpoplpush(source, destination string, timeout int, instance ...string) (st
 	}
 	defer c.Close()
 
-	log.Infof("[Redis] BRPOPLPUSH %v %v %v", source, destination, timeout)
+	//log.Infof("[Redis] BRPOPLPUSH %v %v %v", source, destination, timeout)
 	return redis.String(c.Do("BRPOPLPUSH", source, destination, timeout))
 }
 
